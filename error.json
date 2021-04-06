@@ -1,0 +1,28 @@
+{
+    "service":{
+        "name":"instanceName",
+        "instance":"XXXX",
+        "type":"error|verbose|warning",
+        "data":{
+            "rq":"jsonPayload|stringPayload",
+            "rs":"jsonPayload|stringPayload",
+            "errors":[
+                {
+                    "code":"XXX",
+                    "stacktrace":"",
+                    "externalError":[
+                        {
+                            "data":"XXX",
+                            "code":"XXX"
+                        }   
+                    ]
+                        
+                }    
+                
+                
+            ]    
+        }
+    },
+    "date":"datetime tz"
+
+}
