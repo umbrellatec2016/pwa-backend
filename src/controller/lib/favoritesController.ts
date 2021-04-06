@@ -1,6 +1,4 @@
 import { request, Response } from '../../../@types/express'
-import { QueueService } from '../../../@types/QueueService'
-import { exception } from 'console'
 
 export default class FavoritesController {
 	constructor(private database: [any]) {}
@@ -9,12 +7,12 @@ export default class FavoritesController {
 		console.log(parsed)
 		try {
 			if (typeof parsed.nickname !== 'undefined') {
-				const data = JSON.parse(parsed.data)
+				let data = JSON.parse(parsed.data.replace(/\\/g, ''))
+				//data = JSON.parse(data)
+				//console.log('data ', data)
 				this.database[parsed.nickname] = data
-
+				//console.log(this.database)
 				res.status(201).send()
-			} else {
-				throw exception('must set nikcname')
 			}
 		} catch (e) {
 			console.log(e)
